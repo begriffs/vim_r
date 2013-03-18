@@ -20,7 +20,7 @@ module VimR
     end
 
     def self.method_missing method, *args, &block
-      @win.send method, *args, &block
+      VIM::Window.send method, *args, &block
     end
   end
 
@@ -43,7 +43,13 @@ module VimR
   end
 
   class Buffer
+    def initializer buf
+      @buf = buf
+    end
 
+    def method_missing method, *args, &block
+      @buf.send method, *args, &block
+    end
   end
 
   module Selection

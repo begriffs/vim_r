@@ -1,29 +1,18 @@
-# VimR
+# Easy Vim scripting with Ruby
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'vim_r'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vim_r
+Nobody really likes VimL, so try VimR, a gem to script Vim with Ruby.
 
 ## Usage
 
-TODO: Write usage instructions here
+If your vim is compiled with Ruby support then you can embed Ruby code
+inside VimL and use the VimR library.
 
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+```
+ruby require 'rubygems'; require 'vim_r'
+function! GoMiddle()
+  ruby << RUBY
+    w = VimL::Window.current
+    w.cursor 0, w.buffer.length / 2
+RUBY
+endfunction
+```
