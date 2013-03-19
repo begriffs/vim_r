@@ -12,15 +12,15 @@ module VimR
     end
 
     def self.current
-      Window.new VIM::Window.current
+      Window.new ::VIM::Window.current
     end
 
     def self.[] i
-      Window.new VIM::Window[i]
+      Window.new ::VIM::Window[i]
     end
 
     def self.method_missing method, *args, &block
-      VIM::Window.send method, *args, &block
+      ::VIM::Window.send method, *args, &block
     end
   end
 
@@ -55,14 +55,14 @@ module VimR
   module Selection
     def self.mode
       # :visual, :block_visual, :linewise_visual, or :none
-      case VIM::evaluate 'mode()'
-      when 'v':
+      case ::VIM::evaluate 'mode()'
+      when 'v' then
         :visual
-      when 'V':
+      when 'V' then
         :block_visual
-      when 22.chr: # CTRL-v
+      when 22.chr then # CTRL-v
         :linewise_visual
-      else:
+      else
         :none
       end
     end

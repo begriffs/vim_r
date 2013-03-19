@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = VimR::VERSION
   spec.authors       = ["Joe Nelson"]
   spec.email         = ["cred+github@begriffs.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Easy Vim scripting with Ruby}
+  spec.summary       = %q{Manipulate Windows, Buffers, Selections and more}
+  spec.homepage      = "https://github.com/begriffs/vim_r"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "vimrunner"
 end
