@@ -1,6 +1,6 @@
-# Easy Vim scripting with Ruby
+# Easy Vim scripting with Ruby [![Build Status](https://travis-ci.org/begriffs/vim_r.png)](https://travis-ci.org/begriffs/vim_r)
 
-Nobody really likes VimL, so try VimR, a gem to script Vim with Ruby.
+Nobody really likes VimL, so try VimR.
 
 ## Usage
 
